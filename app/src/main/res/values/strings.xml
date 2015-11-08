@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hidden Pandora</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_text">Click</string>
+    <string name="msg">Pop up </string>
+    <string name="hello_world">Hello World</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+</resources>
