@@ -1,11 +1,17 @@
 package org.esiea.pelete_bliss_debuiche_gauthier.hiddenpandora;
 
 import android.app.FragmentManager;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
 import android.text.format.DateUtils;
 import android.view.Menu;
@@ -30,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        TextView tv_hw= (TextView)findViewById(R.id.tv_hello_world);
+        TextView tv_hw= (TextView)findViewById(R.id.MainActivityTitle);
         tv_hw.setText(getString(R.string.hello_world) + DateUtils.formatDateTime(getApplicationContext(), (new Date()).getTime(), DateFormat.FULL));
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +65,18 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.toast_me) {
+
+            Toast.makeText(getApplicationContext(),"From the action bar",Toast.LENGTH_LONG).show();
+            return true;
+        }
+
+
+
+        if ( id == R.id.btn_square_actbar)  {
+
+         //   switchActivity();
+
             return true;
         }
 
@@ -73,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void ShowDatePickerDialog(View view) {
         DialogFragment timep = new DatePickerFragment();
-        timep.show(getSupportFragmentManager(),"Date Picker");
+        timep.show(getSupportFragmentManager(), "Date Picker");
     }
 
     public void ShowUnboxingDialog ( View view ){
@@ -81,5 +98,36 @@ public class MainActivity extends AppCompatActivity {
         DialogFragment box = new OpenTheBoxDialogFragment();
         box.show(getSupportFragmentManager(),"Open the box");
 
+    }
+    public void notification_test(View view){
+
+
+        PendingIntent pi= PendingIntent.getActivity(this,0,new Intent(this,MainActivity.class),0);
+
+
+        NotificationCompat.Builder notif=  new NotificationCompat.Builder(MainActivity.this);
+        notif.setSmallIcon(R.drawable.bell_sound_notification);
+        notif.setContentText("This is the notification ");
+        notif.setContentTitle("Ze notification");
+        notif.setPriority(0);
+        notif.setAutoCancel(true);
+
+
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        manager.notify(13, notif.build());
+
+
+
+    }
+
+    public void switchToSignUpActivity ( View view) {
+
+        Intent myIntent = new Intent (this,SecondeActivity.class);
+        startActivity(myIntent);
+    }
+
+    public void LaunchBeerActivity(View view) {
+        Intent myIntent = new Intent(this,BeerList.class);
+        startActivity(myIntent);
     }
 }

@@ -2,12 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.esiea.pelete_bliss_debuiche_gauthier.hiddenpandora" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <receiver android:name=".OnBeerJsonDownload">
+                <intent-filter>
+                    <action android:name="BEERS_UPDATE"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                </intent-filter>
+        </receiver>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -17,6 +25,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SecondeActivity"
+            android:label="@string/title_activity_seconde"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".BeerList"
+            android:label="@string/title_activity_beer_list"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
+        <service
+            android:name=".GetBeersServices"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+
+        <activity
+            android:name=".ShowBeerList"
+            android:label="@string/title_activity_show_beer_list"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
     </application>
 
