@@ -38,5 +38,11 @@ public void DownloadBeerlist (View view ){
 
 
 }
+    public void LookUpList ( View view) {
+
+        Intent i = new Intent(this,BeersWithRecycler.class);
+        startActivity(i);
+
+    }
 
 }

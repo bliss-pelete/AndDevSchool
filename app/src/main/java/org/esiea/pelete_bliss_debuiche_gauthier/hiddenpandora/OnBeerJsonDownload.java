@@ -21,13 +21,12 @@ public class OnBeerJsonDownload extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.d(TAG,intent.getAction());
 
-            PendingIntent pi= PendingIntent.getActivity(context,0,new Intent(context,ShowBeerList.class),0);
-
-
+            PendingIntent pi= PendingIntent.getActivity(context,0,new Intent(context,BeersWithRecycler.class),0);
             NotificationCompat.Builder notif=  new NotificationCompat.Builder(context);
             notif.setSmallIcon(R.drawable.bell_sound_notification);
             notif.setContentText("Your beer list is ready");
             notif.setContentTitle("List of beers");
+            notif.setContentIntent(pi);
             notif.setPriority(0);
             notif.setAutoCancel(true);
 

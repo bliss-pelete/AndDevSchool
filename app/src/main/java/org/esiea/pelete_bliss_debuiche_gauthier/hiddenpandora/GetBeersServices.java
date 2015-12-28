@@ -77,6 +77,7 @@ public class GetBeersServices extends IntentService {
         // TODO: Handle action Foo
 
 
+
         Log.d(TAG,"Thread service name:" + Thread.currentThread().getName());
         URL url = null;
         try {
@@ -88,7 +89,7 @@ public class GetBeersServices extends IntentService {
                         new File(getCacheDir(), "bieres.json"));
                 Log.d(TAG, "Bieres json downloaded !");
 
-               // LocalBroadcastManager.getInstance(this).sendBroadcast(new OnBeerJsonDownload(),intentfilter);
+                // LocalBroadcastManager.getInstance(this).sendBroadcast(new OnBeerJsonDownload(),intentfilter);
                 Intent i = new Intent("BEERS_UPDATE");
                 sendBroadcast(i);
             }
@@ -97,7 +98,6 @@ public class GetBeersServices extends IntentService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 
