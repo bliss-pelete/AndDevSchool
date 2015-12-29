@@ -19,10 +19,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BeersWithRecycler extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
+    public JSONArray beerArray = getBeersFromFile();
+    private List<BeerInfo> ze_list = new ArrayList<>();
    // private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
@@ -30,22 +33,23 @@ public class BeersWithRecycler extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beers_with_recycler);
-
+        ze_list = JSONParser.parseFeed(beerArray);
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_biere);
         mLayoutManager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
         mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(new BeersAdapter(getBeersFromFile()));
+        mRecyclerView.setAdapter(new BeersAdapter(ze_list));
         mRecyclerView.setHasFixedSize(true);
 
 
     }
     private class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerHolder> {
 
-        private JSONArray beers;
+       // private JSONArray beers;
+        private List<BeerHolder> beerslst;
 
-        public BeersAdapter(JSONArray beers) {
+        public BeersAdapter(List<BeerInfo> ze_list) {
 
-            this.beers=beers;
+            this.beerslst = beerslst;
 
         }
 
@@ -73,27 +77,29 @@ public class BeersWithRecycler extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(BeersAdapter.BeerHolder holder, int position) {
+        public void onBindViewHolder(BeersAdapter.BeerHolder holder, final int position) {
 
             JSONObject the_beer=null;
             String beer_name=null;
 
-            try {
-                the_beer.getJSONObject(String.valueOf(position));
-                beer_name=the_beer.getString("name");
-                holder.name.setText(beer_name);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            BeerInfo one_beer = ze_list.get(position);
+            holder.name.setText(one_beer.getBeer_name());
+
+
+
 
         }
+
+
 
         @Override
         public int getItemCount() {
 
-            Log.d("TAG", "item size " + beers.length());
-            return beers.length();
+            Log.d("TAG", "item size " + beerslst.size());
+            return beerslst.size();
         }
+
+
     }
 
 
