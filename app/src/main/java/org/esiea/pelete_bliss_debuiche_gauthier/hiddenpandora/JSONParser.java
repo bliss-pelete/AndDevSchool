@@ -33,7 +33,7 @@ public class JSONParser {
                 return beerInfoList;
             } catch (JSONException e) {
                 e.printStackTrace();
-                return null;
+              return null;
             }
         }
     }

@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.NotificationCompat;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 /**
@@ -21,6 +22,8 @@ public class OnBeerJsonDownload extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.d(TAG,intent.getAction());
 
+
+
             PendingIntent pi= PendingIntent.getActivity(context,0,new Intent(context,BeersWithRecycler.class),0);
             NotificationCompat.Builder notif=  new NotificationCompat.Builder(context);
             notif.setSmallIcon(R.drawable.bell_sound_notification);
@@ -33,5 +36,7 @@ public class OnBeerJsonDownload extends BroadcastReceiver {
             NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             manager.notify(14, notif.build());
 
+
     }
+
 }

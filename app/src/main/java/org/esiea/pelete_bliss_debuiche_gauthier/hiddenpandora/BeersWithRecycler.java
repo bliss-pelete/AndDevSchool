@@ -23,35 +23,45 @@ import java.util.List;
 
 public class BeersWithRecycler extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
-    public JSONArray beerArray = getBeersFromFile();
-    private List<BeerInfo> ze_list = new ArrayList<>();
-   // private RecyclerView.Adapter mAdapter;
+    public RecyclerView mRecyclerView;
+    public JSONArray beerArray = new JSONArray();
+    //private List<BeerInfo> ze_list = new ArrayList<>();
+   public RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_beers_with_recycler);
-        ze_list = JSONParser.parseFeed(beerArray);
+       setContentView(R.layout.activity_beers_with_recycler);
+        JSONArray beerArray = getBeersFromFile();
+
+       // ze_list = JSONParser.parseFeed(beerArray);
+
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_biere);
-        mLayoutManager= new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.setAdapter(new BeersAdapter(ze_list));
+        mLayoutManager= new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+
+        mAdapter = new BeersAdapter(beerArray);
+        mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setHasFixedSize(true);
-
-
+        mRecyclerView.setLayoutManager(mLayoutManager);
     }
     private class BeersAdapter extends RecyclerView.Adapter<BeersAdapter.BeerHolder> {
 
-       // private JSONArray beers;
-        private List<BeerHolder> beerslst;
+       private JSONArray beers;
+        //private List<BeerInfo> beerslst;
 
-        public BeersAdapter(List<BeerInfo> ze_list) {
+        public BeersAdapter(JSONArray ze_list) {
 
-            this.beerslst = beerslst;
+            this.beers = ze_list;
 
         }
+
+        public void setNewBeer (JSONArray something) {
+            this.beers=something;
+            mAdapter.notifyDataSetChanged();
+        }
+
+
 
 
         public class BeerHolder extends RecyclerView.ViewHolder{
@@ -59,7 +69,7 @@ public class BeersWithRecycler extends AppCompatActivity {
             public TextView name;
             public BeerHolder(View itemView) {
                 super(itemView);
-                name= (TextView) itemView;
+                name= (TextView) itemView.findViewById(R.id.rv_beer_element);
             }
 
 
@@ -71,38 +81,39 @@ public class BeersWithRecycler extends AppCompatActivity {
             View beerview = LayoutInflater.from(parent.getContext()).inflate(R.layout.rv_beer_element,parent,false);
 
 
-            BeerHolder bh= new BeerHolder(beerview);
+            return  new BeerHolder(beerview);
 
-            return bh;
         }
 
         @Override
         public void onBindViewHolder(BeersAdapter.BeerHolder holder, final int position) {
 
-            JSONObject the_beer=null;
-            String beer_name=null;
+            JSONObject one_beer= new JSONObject();
+            one_beer=null;
+            String beer_name = null;
 
-            BeerInfo one_beer = ze_list.get(position);
-            holder.name.setText(one_beer.getBeer_name());
+            try {
+                one_beer= (JSONObject)beers.get(position);
+                beer_name= one_beer.getString("name");
+                holder.name.setText(beer_name);
 
-
-
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
 
         }
-
 
 
         @Override
         public int getItemCount() {
 
-            Log.d("TAG", "item size " + beerslst.size());
-            return beerslst.size();
+            Log.d("TAG", "item size " + beers.length());
+            return beers.length();
         }
 
 
+
     }
-
-
 
 
 // cette fonction permet de constuire le tableau json
