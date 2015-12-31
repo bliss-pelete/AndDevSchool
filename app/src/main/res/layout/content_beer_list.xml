@@ -48,20 +48,28 @@
 
     <EditText
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="105dp"
         android:gravity="top"
         android:inputType="textMultiLine"
         android:textColor="#FFFFFF"
         android:ems="10"
         android:id="@+id/et_reason_drink"
-        android:layout_marginTop="55dp"
-        android:layout_below="@+id/bt_list_beers"
+        android:text="@string/reason"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="@string/reason" />
+        android:layout_below="@+id/tv_drinking_to" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/bt_submit"
+        android:layout_below="@+id/et_reason_drink"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="submit_text"/>
 
 
 </RelativeLayout>

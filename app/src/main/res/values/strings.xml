@@ -18,7 +18,13 @@
     <string name="bda">BDA</string>
     <string name="dt">DTRE</string>
     <string name="event">Esiea Event</string>
-    <string name="member_mail">"Hello, \n My name is [your name]. I am a [school year/profession] and I would like to join your club\n"</string>
+    <string name="member_mail">Hello,\n\r\n\r
+
+
+\n\r\n\rMy name is [your name]. I am a [school year/profession] and I would like to join your club!
+
+
+\n\r\n\rPowered by Hidden Pandora</string>
     <string name="member_request">Membership Request</string>
     <string name="dl_beerlst">Download Beer List</string>
     <string name="view_list">What is on the list</string>
@@ -40,7 +46,7 @@
     <string name="openPandora"> Pandora\'s box is an artifact in Greek mythology, taken from the myth of Pandora\'s creation in Hesiod\'s Works and Days.</string>
     <string name="the_more_u_no">The more you know</string>
     <string name="whojoin">Who do you want to join ?</string>
-    <string name="lbthem">Learn more about them in the \'clubs\' section or pick one to register</string>
+    <string name="lbthem">Pick one club to register. Learn more about them in the \'clubs\' section</string>
 
 
 </resources>

@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Pandora caché</string>
+    <string name="app_name">Hidden Pandora</string>
     <string name="action_settings">Paramètres</string>
     <string name="button_text">Click</string>
+
+    <string name="msg">Pop up </string>
+    <string name="hello_world">Bonjour le monde</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuler</string>
+    <string name="title_activity_seconde">Deuxieme Activité</string>
+    <string name="title_activity_beer_list">Liste des bières</string>
+    <string name="title_activity_show_beer_list">Afficher la liste des bières</string>
+    <string name="PwrdHidPand">\nCreer avec Hidden Pandora</string>
+    <string name="kps">KPS</string>
+    <string name="JE">Junior Esiea</string>
+    <string name="air">Air Esiea</string>
+    <string name="bds">BDS</string>
+    <string name="bde">BDE</string>
+    <string name="bda">BDA</string>
+    <string name="dt">DTRE</string>
+    <string name="event">Esiea Event</string>
+    <string name="member_mail">Bonjour,\n\r\n\r
+
+
+\n\r\n\rMon nom est [nom]. Je suis [school year/profession] et je voudrais rejoindre votre association!
+
+
+\n\r\n\rPowered by Hidden Pandora</string>
+    <string name="member_request">Demande d\'adhésion</string>
+    <string name="dl_beerlst">Liste des bières</string>
+    <string name="view_list">Voir la liste des bières</string>
+    <string name="sign_up">Adhérer</string>
+    <string name="clubs">Assos</string>
+    <string name="beers">Bières</string>
+    <string name="drinking_to">Une bière pour</string>
+    <string name="reason">Un descriptif de ce que vous celebrez</string>
+    <string name="learn_more">Plus d\'infos sur les assos</string>
+
+    <string name="openBDA"> BDA ESIEA Paris, l\'association artistique et culturelle de l\'ESIEA Paris !</string>
+    <string name="openBDS"> BDS\'KOBAR, votre BdS ESIEA pour l\'année 2015-2016 !</string>
+    <string name="openBDE"> Pep\'S c\'est tout d\'abord une équipe soudée aux multiples profils et compétences et donc capable de représenter chaque Esiearque au maximum!</string>
+    <string name="openKPS"> Kernel Panic Systems (KPS) est l\'association informatique du Groupe ESIEA.</string>
+    <string name="openDTRE"> L\'association DTRE est l\'asso robotique de l\'ESIEA. Nos spécialités : systèmes autonomes embarqués, organisation et participation à des événements.</string>
+    <string name="openAIRE">Association Aérospatiale et Aéronautique de l\'ESIEA depuis 1986 ! http://air.esiea.fr</string>
+    <string name="openJE">Junior ESIEA est la nouvelle Junior Entreprise de l\'ESIEA</string>
+    <string name="openEvent"> Esiea Event est une nouvelle association donc le but est de proposer des services novateurs aux esiearques.</string>
+    <string name="openPandora"> Pandora\'s box is an artifact in Greek mythology, taken from the myth of Pandora\'s creation in Hesiod\'s Works and Days.</string>
+    <string name="the_more_u_no">Pour en savoir plus</string>
+    <string name="whojoin">Quelle assos voulez_vous rejoindre ?</string>
+    <string name="lbthem">Choisis l\'assos que tu veux rejoindre.Plus d\'info dans la section \'Assos\'</string>
+
 </resources>

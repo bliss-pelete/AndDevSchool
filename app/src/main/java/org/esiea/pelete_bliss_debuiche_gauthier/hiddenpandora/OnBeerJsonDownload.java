@@ -15,7 +15,7 @@ import android.util.Log;
 public class OnBeerJsonDownload extends BroadcastReceiver {
 
 
-    public static final String TAG ="Beer downloaded";
+    public static final String TAG ="Beers downloaded";
 
 
     @Override
@@ -24,17 +24,17 @@ public class OnBeerJsonDownload extends BroadcastReceiver {
 
 
 
-            PendingIntent pi= PendingIntent.getActivity(context,0,new Intent(context,BeersWithRecycler.class),0);
+            PendingIntent myIntent= PendingIntent.getActivity(context,0,new Intent(context,BeersWithRecycler.class),0);
             NotificationCompat.Builder notif=  new NotificationCompat.Builder(context);
             notif.setSmallIcon(R.drawable.bell_sound_notification);
             notif.setContentText("Your beer list is ready");
             notif.setContentTitle("List of beers");
-            notif.setContentIntent(pi);
+            notif.setContentIntent(myIntent);
             notif.setPriority(0);
             notif.setAutoCancel(true);
 
             NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-            manager.notify(14, notif.build());
+            manager.notify(23, notif.build());
 
 
     }

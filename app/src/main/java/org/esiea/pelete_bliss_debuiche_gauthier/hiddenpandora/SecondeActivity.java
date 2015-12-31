@@ -29,14 +29,14 @@ public class SecondeActivity extends AppCompatActivity {
 
                 Intent message = new Intent(Intent.ACTION_SEND);
                 message.setType("message/rfc822");
+                message.putExtra(Intent.EXTRA_SUBJECT,getResources().getString(R.string.member_request));
+                message.putExtra(Intent.EXTRA_TEXT,getResources().getString(R.string.member_mail));
 
 
                 switch(position) {
                     case 0:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"kps@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -45,9 +45,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 1:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"dtre@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -56,9 +54,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 2:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"air-esiea@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -67,9 +63,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 3:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"junior-esiea@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -78,9 +72,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 4:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"bdaparis@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -89,9 +81,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 5:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"bdeparis@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -100,9 +90,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 6:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"bdsparis@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -111,12 +99,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 7:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"pelete@et.esiea.fr"});
-                       // message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_SUBJECT,"Membership Request");
-                        message.putExtra(Intent.EXTRA_TEXT,"Hello,\n\r\n\r"+"My name is [your name]. I am a [school year/profession] and I would like to join your club!\n\r\n" +
-                                "\n" +
-                                "Powered by Hidden Pandora");
-                        //message.putExtra(Intent.EXTRA_TEXT,"\nPowered by Hidden Pandora");
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
@@ -125,9 +108,7 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 8:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"esiea.event@gmail.com"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
