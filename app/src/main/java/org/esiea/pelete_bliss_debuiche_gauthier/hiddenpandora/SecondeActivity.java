@@ -111,9 +111,12 @@ public class SecondeActivity extends AppCompatActivity {
                         break;
                     case 7:
                         message.putExtra(Intent.EXTRA_EMAIL, new String[]{"pelete@et.esiea.fr"});
-                        message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.member_mail);
-                        message.putExtra(Intent.EXTRA_TEXT,R.string.PwrdHidPand);
+                       // message.putExtra(Intent.EXTRA_SUBJECT,R.string.member_request);
+                        message.putExtra(Intent.EXTRA_SUBJECT,"Membership Request");
+                        message.putExtra(Intent.EXTRA_TEXT,"Hello,\n\r\n\r"+"My name is [your name]. I am a [school year/profession] and I would like to join your club!\n\r\n" +
+                                "\n" +
+                                "Powered by Hidden Pandora");
+                        //message.putExtra(Intent.EXTRA_TEXT,"\nPowered by Hidden Pandora");
                         try {
                             startActivity(Intent.createChooser(message, "Send mail..."));
                         } catch (android.content.ActivityNotFoundException ex) {
