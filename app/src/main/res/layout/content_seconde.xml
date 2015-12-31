@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Who do you want to join ?"
+        android:text="@string/whojoin"
         android:textColor="#FFFFFF"
         android:id="@+id/tv_select_the_club"
         android:layout_alignParentTop="true"
@@ -35,6 +35,18 @@
         android:layout_below="@+id/tv_select_the_club"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/lbthem"
+        android:gravity="center"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tv_learn_about_them"
+        android:layout_below="@+id/tv_select_the_club"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
 
 
 </RelativeLayout>

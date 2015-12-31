@@ -37,15 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         TextView tv_hw= (TextView)findViewById(R.id.MainActivityTitle);
-        tv_hw.setText(getString(R.string.hello_world) + DateUtils.formatDateTime(getApplicationContext(), (new Date()).getTime(), DateFormat.FULL));
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        tv_hw.setText(getString(R.string.hello_world)+" " + DateUtils.formatDateTime(getApplicationContext(), (new Date()).getTime(), DateFormat.FULL));
+
 
     }
 
@@ -128,6 +121,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void LaunchBeerActivity(View view) {
         Intent myIntent = new Intent(this,BeerList.class);
+        startActivity(myIntent);
+    }
+
+    public void LaunchClubInfo(View view) {
+        Intent myIntent = new Intent(this,ClubsInfo.class);
         startActivity(myIntent);
     }
 }

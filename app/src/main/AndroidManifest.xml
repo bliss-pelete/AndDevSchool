@@ -47,6 +47,8 @@
 
         <activity android:name=".BeersWithRecycler" >
         </activity>
+        <activity android:name=".ClubsInfo" >
+        </activity>
     </application>
 
 </manifest>

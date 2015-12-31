@@ -16,7 +16,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Download Beer List"
+        android:text="@string/dl_beerlst"
         android:id="@+id/bt_dl_beer_list"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
@@ -27,7 +27,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What's on the list"
+        android:text="@string/view_list"
         android:id="@+id/bt_list_beers"
         android:layout_marginTop="27dp"
         android:layout_below="@+id/bt_dl_beer_list"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Drinking to ?"
+        android:text="@string/drinking_to"
         android:textColor="#FFFFFF"
         android:id="@+id/tv_drinking_to"
         android:layout_below="@+id/bt_list_beers"
@@ -61,7 +61,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:text="Give us a short description of why you&apos;re celebrating" />
+        android:text="@string/reason" />
 
 
 </RelativeLayout>

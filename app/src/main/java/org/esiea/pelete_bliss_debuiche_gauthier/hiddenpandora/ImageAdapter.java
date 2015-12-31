@@ -59,7 +59,7 @@ public class ImageAdapter extends BaseAdapter {
             R.drawable.icon_airesiea, R.drawable.icon_junior,
             R.drawable.icon_bda, R.drawable.icon_square,
             R.drawable.icon_penta, R.drawable.icon_double_hex,
-            R.drawable.icon_op_red
+            R.drawable.icon_triangle
 
 
       };
